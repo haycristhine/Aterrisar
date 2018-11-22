@@ -7,7 +7,7 @@ public interface ProdutoDAO {
     List<Produto> findAll();   
     List<Produto> findByName(String name);
     List<Produto> findById(int id);
-    boolean insertProduto(Produto produto);
+    Produto insertProduto(Produto produto);
     boolean updateProduto(Produto produto);
     boolean deleteProduto(Produto produto);
     boolean reservarProduto(Produto produto);

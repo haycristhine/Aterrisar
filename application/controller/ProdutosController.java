@@ -11,6 +11,13 @@ public class ProdutosController {
 		this.view = view;
 	}
 	
+	public Produto createProduto(String name, float valor, float Desconto) {
+		if (this.model == null) {
+			this.model = model.insertProduto(new Produto());
+		}
+		return this.model;
+	}
+	
    public void setProdutoName(String name){
       model.setName(name);	
    }
@@ -42,5 +49,7 @@ public class ProdutosController {
    public void updateView(){				
       view.printProdutoDetails(model.getName(), model.getValorFinal());
    }	
+   
+   
 
 }

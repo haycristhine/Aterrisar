@@ -68,9 +68,10 @@ public class Produto implements ProdutoDAO{
 	}
 
 	@Override
-	public boolean insertProduto(Produto produto) {
+	public Produto insertProduto(Produto produto) {
 		// TODO Auto-generated method stub
-		return false;
+		//insere no banco e retorna objeto
+		return new Produto();
 	}
 
 	@Override
