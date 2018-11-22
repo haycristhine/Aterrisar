@@ -85,4 +85,10 @@ public class Produto implements ProdutoDAO{
 		return false;
 	}
 
+	@Override
+	public boolean reservarProduto(Produto produto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

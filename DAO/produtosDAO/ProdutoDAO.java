@@ -10,5 +10,6 @@ public interface ProdutoDAO {
     boolean insertProduto(Produto produto);
     boolean updateProduto(Produto produto);
     boolean deleteProduto(Produto produto);
+    boolean reservarProduto(Produto produto);
 
 }
