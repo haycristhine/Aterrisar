@@ -1,16 +1,26 @@
 package produtos;
-import java.util.List;
 
-import produtosDAO.ProdutoDAO;
+import produtosDAO.ProdutosDAO;
 
-public class Produto implements ProdutoDAO{
+public class Produto{
 	private int id;
 	private float valor;
 	private float desconto;
 	private String name;
+	private ProdutosDAO dao;
 
-	public Produto() {
-		// TODO Auto-generated constructor stub
+	public Produto(String name, float valor, float desconto) {
+		this.name = name;
+		this.valor = valor;
+		this.desconto = desconto;
+		this.getDAO().insertObject((Object)this);
+	}
+	
+	private ProdutosDAO getDAO() {
+		if (this.dao == null) {
+			this.dao = new ProdutosDAO();
+		}
+		return this.dao;
 	}
 
 	public int getId() {
@@ -47,49 +57,6 @@ public class Produto implements ProdutoDAO{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Override
-	public List<Produto> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Produto> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Produto> findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Produto insertProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		//insere no banco e retorna objeto
-		return new Produto();
-	}
-
-	@Override
-	public boolean updateProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean deleteProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean reservarProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

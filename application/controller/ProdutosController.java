@@ -5,7 +5,7 @@ import view.ProdutosView;
 public class ProdutosController {
 	private Produto model;
 	private ProdutosView view;
-
+	
 	public ProdutosController(Produto model, ProdutosView view) {
 		this.model = model;
 		this.view = view;
@@ -13,10 +13,14 @@ public class ProdutosController {
 	
 	public Produto createProduto(String name, float valor, float Desconto) {
 		if (this.model == null) {
-			this.model = model.insertProduto(new Produto());
+			this.model = new Produto(name, valor, Desconto);
 		}
 		return this.model;
 	}
+
+   public void updateView(){				
+	   view.printProdutoDetails(model.getName(), model.getValorFinal());
+   }	
 	
    public void setProdutoName(String name){
       model.setName(name);	
@@ -45,11 +49,6 @@ public class ProdutosController {
    public float getProdutoValorFinal() {
 	   return model.getValorFinal();
    }
-
-   public void updateView(){				
-      view.printProdutoDetails(model.getName(), model.getValorFinal());
-   }	
-   
    
 
 }
